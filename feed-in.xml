@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<feed description="" name="delta" xmlns="uri:falcon:feed:0.1">
+    <frequency>days(1)</frequency>
+
+    <clusters>
+        <cluster name="cluster-one" type="source">
+            <validity start="2014-03-26T05:00Z" end="2015-03-26T05:00Z" />
+            <retention limit="months(9999)" action="delete" />
+        </cluster>
+    </clusters>
+
+    <locations>
+        <location type="data" path="/cluster-one/data/delta/${YEAR}${MONTH}${DAY}" />
+    </locations>
+
+    <ACL owner="hue" group="users" permission="0755" />
+    <schema location="/none" provider="none" />
+</feed>

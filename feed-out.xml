@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<feed description="" name="snapshot" xmlns="uri:falcon:feed:0.1">
+    <frequency>days(1)</frequency>
+
+    <clusters>
+        <cluster name="cluster-one" type="source">
+            <validity start="2014-03-25T05:00Z" end="2015-01-01T05:00Z" />
+            <retention limit="months(9999)" action="delete" />
+        </cluster>
+    </clusters>
+
+    <table uri="catalog:falcon_howto:snapshot#ds=${YEAR}${MONTH}${DAY}" />
+
+    <ACL owner="hue" group="users" permission="0755" />
+    <schema location="hcat" provider="hcat"/>
+</feed>
